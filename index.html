@@ -1,51 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keyfinder</title>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #2807ff;
+        color: #ff9407;
+        text-align: center;
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      select,
+      output {
+        height: 4rem;
+        font-size: 2rem;
+      }
+
+      select {
+        background-color: #83817f;
+        outline: none;
+      }
+
+      output {
+        font-size: 3rem;
+        width: 50%;
+        text-shadow: black 5px 5px 5px;
+      }
+    </style>
+  </head>
+  <body>
     <select>
-        <option>doh</option>
-        <option>rey</option>
-        <option>mi</option>
-        <option>fah</option>
-        <option>soh</option>
-        <option>lah</option>
-        <option>ti</option>
+      <option>doh</option>
+      <option>rey</option>
+      <option>mi</option>
+      <option>fah</option>
+      <option>soh</option>
+      <option>lah</option>
+      <option>ti</option>
     </select>
     <output>D</output>
-</body>
-<script>
+  </body>
+  <script>
     // highest note select input
-    const hNSelector = document.querySelector('select');
-    const output = document.querySelector('output');
+    const hNSelector = document.querySelector("select");
+    const output = document.querySelector("output");
 
-// check for changes and update output
-hNSelector.addEventListener('change', (e)=>handleHighestNoteChange(e.target.value))
+    // check for changes and update output
+    hNSelector.addEventListener("change", (e) =>
+      handleHighestNoteChange(e.target.value)
+    );
 
-function handleHighestNoteChange(note){
-    switch(note){
-        case 'fah':
-        return displayKey('B flat');
-        case 'soh':
-        return displayKey('A flat');
-        case 'lah':
-        return displayKey('F sharp');
-        case 'ti':
-        return displayKey('F');
-        case 'doh':
-        return displayKey('D');
-        case 'rey':
-        return displayKey('C');
-        default: //case 'mi'
-        return displayKey('B');
+    function handleHighestNoteChange(note) {
+      switch (note) {
+        case "fah":
+          return displayKey("B flat");
+        case "soh":
+          return displayKey("A flat");
+        case "lah":
+          return displayKey("F sharp");
+        case "ti":
+          return displayKey("F");
+        case "doh":
+          return displayKey("D");
+        case "rey":
+          return displayKey("C");
+        default:
+          //case 'mi'
+          return displayKey("B");
+      }
     }
-}
 
-function displayKey(key){
-    output.textContent = key;
-}
-</script>
+    function displayKey(key) {
+      output.textContent = key;
+    }
+  </script>
 </html>
