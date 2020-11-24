@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyfinder</title>
+</head>
+<body>
+    <select>
+        <option>doh</option>
+        <option>rey</option>
+        <option>mi</option>
+        <option>fah</option>
+        <option>soh</option>
+        <option>lah</option>
+        <option>ti</option>
+    </select>
+    <output>D</output>
+</body>
+<script>
+    // highest note select input
+    const hNSelector = document.querySelector('select');
+    const output = document.querySelector('output');
+
+// check for changes and update output
+hNSelector.addEventListener('change', (e)=>handleHighestNoteChange(e.target.value))
+
+function handleHighestNoteChange(note){
+    switch(note){
+        case 'fah':
+        return displayKey('B flat');
+        case 'soh':
+        return displayKey('A flat');
+        case 'lah':
+        return displayKey('F sharp');
+        case 'ti':
+        return displayKey('F');
+        case 'doh':
+        return displayKey('D');
+        case 'rey':
+        return displayKey('C');
+        default: //case 'mi'
+        return displayKey('B');
+    }
+}
+
+function displayKey(key){
+    output.textContent = key;
+}
+</script>
+</html>
