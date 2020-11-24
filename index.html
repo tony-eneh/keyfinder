@@ -16,37 +16,60 @@
         padding: 0;
         height: 100vh;
         width: 100vw;
+        box-sizing: border-box;
       }
       body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         background-color: #2807ff;
         color: #ff9407;
-        text-align: center;
         font-family: "Nunito Sans", sans-serif;
+        text-shadow: black 5px 5px 5px;
       }
 
       select,
       output {
         height: 4rem;
         font-size: 2rem;
+        display: inline-block;
+        /* width: 20%; */
       }
 
       select {
         background-color: #83817f;
         outline: none;
+        margin-top: 2rem;
+        width: 6rem;
+        margin-left: calc(50% - 7rem);
+        margin-top: 150px;
+        margin-right: 1rem;
       }
 
       output {
-        font-size: 3rem;
-        width: 50%;
-        text-shadow: black 5px 5px 5px;
+        font-size: 2.5rem;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        font-size: x-small;
+        color: black;
+        margin: 0;
+        text-shadow: none;
       }
     </style>
   </head>
   <body>
+    <h1>Keyfinder</h1>
+    <p>
+      So you have a song in solfa notation, but you are unsure what key to play
+      it in?
+    </p>
+    <p>
+      What is the highest note for soprano in the song? Select the note from the
+      dropdown below and we will suggest a suitable key for your song
+    </p>
     <select>
       <option>doh</option>
       <option>rey</option>
@@ -75,7 +98,7 @@
         case "soh":
           return displayKey("A flat");
         case "lah":
-          return displayKey("F sharp");
+          return displayKey("G flat");
         case "ti":
           return displayKey("F");
         case "doh":
